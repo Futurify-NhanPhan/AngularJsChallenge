@@ -1,0 +1,70 @@
+﻿.board-layout {
+}
+ul.sortable {
+    margin-left:0px;
+    min-height:0px;
+}
+
+    .board-layout ul.columns {
+        display: table;
+        width: 100%;
+        border-spacing: 5px;
+    }
+
+        .board-layout ul.columns > li {
+            display: table-cell;
+        }
+
+            .board-layout ul.columns > li.body {
+                background: rgba(242, 242, 242, 0.62);
+                vertical-align: top;
+            }
+
+            .board-layout ul.columns > li div.column {
+            }
+
+            .board-layout ul.columns > li div.column-header {
+                font-size: 22px;
+                line-height: 26px;
+                font-weight: bold;
+                background: #ddd;
+                padding: 5px;
+            }
+
+                .board-layout ul.columns > li div.column-header .number-header {
+                    border: 3px solid black;
+                    width: 26px;
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 16px;
+                    -moz-border-radius: 16px;
+                    -webkit-border-radius: 16px;
+                    -khtml-border-radius: 16px;
+                    margin-right: 5px;
+                }
+
+
+            .board-layout ul.columns > li ul.column-content {
+                overflow-x: hidden;
+                line-break: auto;
+            }
+
+                .board-layout ul.columns > li ul.column-content li {
+                    background: #fff;
+                    border: 1px solid #DDD;
+                    /*padding: 5px;*/
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    margin-left:16px;
+                }
+
+.board-layout-item {
+    background: #ffffff;
+    margin-left: 6px;
+    margin: 0px 0px 0px 8px;
+    padding: 8px;
+}
+
+    .board-layout-item .muted{
+        color: #AFAFAF;
+    }

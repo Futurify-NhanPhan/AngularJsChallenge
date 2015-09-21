@@ -1,0 +1,29 @@
+﻿.content img
+{
+    vertical-align: initial;
+}
+
+.content img[align="top"]
+{
+    vertical-align:top;
+}
+
+.content img[align="texttop"]
+{
+    vertical-align:text-top;
+}
+
+.content img[align="bottom"]
+{
+    vertical-align:baseline;
+}
+
+.content img[align="middle"]
+{
+    vertical-align:middle;
+}
+
+.content img[align="baseline"]
+{
+    vertical-align:baseline;
+}

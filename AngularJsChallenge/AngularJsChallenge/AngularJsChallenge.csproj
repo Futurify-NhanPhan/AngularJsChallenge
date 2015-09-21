@@ -254,7 +254,15 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Styles\board-layout_ko201509201.css" />
     <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\bootstrap_ko201509201.css" />
+    <Content Include="Styles\chosen.min_ko201509201.css" />
+    <Content Include="Styles\clause-base-style_ko201509201.css" />
+    <Content Include="Styles\consultant-project_ko201509201.css" />
+    <Content Include="Styles\jquery-ui-1.9.2.custom_ko201509201.css" />
+    <Content Include="Styles\select2_ko201509201.css" />
+    <Content Include="Styles\site_ko201509201.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

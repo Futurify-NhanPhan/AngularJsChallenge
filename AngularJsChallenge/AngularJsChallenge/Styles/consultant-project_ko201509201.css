@@ -1,0 +1,63 @@
+.consultant-project-information {
+    overflow: auto;
+    text-align: right;
+}
+
+.consultantProject-summary {
+    border-collapse: separate;
+    border-spacing: 5px;
+    width: 100%;
+}
+
+.attr-title {
+    text-align: right;
+    width: 145px;
+    vertical-align: top;
+}
+
+.attr-value {
+    font-weight:bold;
+    vertical-align: top;
+    width: 69%;
+    display: inline-block;
+}
+
+.attr-value-1stcol {
+    width: 50%;
+}
+
+.consultant-project-title {
+}
+    .consultant-project-title:hover {
+        text-decoration: none;
+    }
+
+    .consultant-project-title .name-label {
+        font-weight: normal;
+    }
+
+.well.corporate {
+    background: #CFDCEE;
+}
+
+.well.independent {
+    background: #EBEBEB;
+}
+
+.well.consultant-project-normal {
+    background: #E0F0E0;
+}
+
+/* Consultant Projects Index page (search page) */
+.consultant-project.summary fieldset.horizontal.taxonomy-field {
+    width: 100%;
+}
+    .consultant-project.summary fieldset.horizontal.taxonomy-field > label {
+        width: 15%;
+        vertical-align: top;
+        margin: 4px 0px;
+    }
+    .consultant-project.summary fieldset.horizontal.taxonomy-field > span {
+        display: inline-block;
+        width: 70%;
+    }
