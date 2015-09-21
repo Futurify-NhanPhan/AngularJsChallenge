@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AngularJsChallenge.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,19 @@ namespace AngularJsChallenge.Controllers
             ViewBag.Message = "Your app description page.";
 
             return View();
+        }
+
+        public ActionResult Search()
+        {
+           
+            List<Segment> segments = new List<Segment>();
+            segments.Add(new Segment()
+            {
+                Id=0,
+                Content="Nhan"
+
+            });
+            return Json(new { Segments = segments },JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Contact()

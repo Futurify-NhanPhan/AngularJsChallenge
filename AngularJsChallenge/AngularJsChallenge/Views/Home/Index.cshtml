@@ -1,111 +1,120 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@section Scripts {
+    
+<script src="~/Scripts/index.js"></script>
 
-<div class="tab-pane active col-md-3" id="tab-pane-Search">
-    <form action="/Clauses/SearchClausesByPage" class="clearfix" id="searchForm" method="get" name="searchForm">       
-        <label>Search Segments</label>
-        <input class="input-xlarge" id="keyword" name="keyword" style="margin-bottom: 10px; height: 28px;" type="text" value="">        
-        <br>
-        <div class="form-inline">
-            <label class="checkbox"><input id="advancedSearch" name="advancedSearch" type="checkbox" value="true"> <b>Advanced Search</b></label>
-        </div>
-        <div class="tab-pane control-group" id="AdvancedSearchTab" style="display: block;">
-            <label>Content Classification</label>
-            <select class="input-xlarge" id="Document_Type" name="Document Type">
-                <option>All</option>
-                <option>ACME Secteur Financier FR</option>
-                <option>ACME Service Summary</option>
-                <option>Corporate Organization</option>
-                <option>Corporate Profile</option>                
-            </select>           
-            <label>
-                Document Type
-                <select class="input-xlarge" id="Document_Type" name="Document Type">
-                    <option value="0">All</option>
-                    <option value="5557">Technical Proposal</option>
-                    <option value="5559">Financial Proposal</option>
-                    <option value="6018">Resume</option>
+}
+<div ng-controller="manageCtrl">
+    <div class="tab-pane active col-md-3">
+        <form action="/Clauses/SearchClausesByPage" class="clearfix" method="get">
+            <label>Search Segments {{segments}}</label>
+            <input class="input-xlarge" style="margin-bottom: 10px; height: 28px;" type="text" value="">
+            <br>
+            <div class="form-inline">
+                <label class="checkbox"><input type="checkbox" value="true"> <b>Advanced Search</b></label>
+            </div>
+            <div class="tab-pane control-group" style="display: block;">
+                <label>Content Classification</label>
+                <select class="input-xlarge">
+                    <option>All</option>
+                    <option>ACME Secteur Financier FR</option>
+                    <option>ACME Service Summary</option>
+                    <option>Corporate Organization</option>
+                    <option>Corporate Profile</option>
                 </select>
-            </label>
-            <label class="checkbox"><input id="onlyDrafts" name="onlyDrafts" type="checkbox" value="true"> Show Only Drafts</label>
-            <label class="checkbox"><input id="isMissingTaxonomies" name="isMissingTaxonomies" type="checkbox" value="true"> View Segments with Missing Taxonomies</label>
-        </div>
-        <a class="btn" id="search-icon" style="float: right; margin: 8px 8px 0 0;"><i class="icon icon-search"></i> Search</a>
-        <a class="btn" id="reset-icon" style="float: right; margin: 8px 8px 0 0;"><i class="icon icon-repeat"></i></a>
-    </form>
-       
-</div>
-<div class="zone zone-content col-md-9">
-    <div id="content-scrollable">
-        <div class="clause clause-normal well" >
-            <article id="content-item-9074" class="content-item clearfix summary clause">
-                <header class="clearfix">
-                    <div>
-                        <div class="autowidth-left">
-                            <ul class="pageStatus">
-                                <li><img class="icon" src="/Images/online.gif" alt="Online" > </li> <li>Published</li>
-                                <li>(2 days ago)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="metadata">
-                        <div class="clause-meta meta-repository" >
-                            <img class="meta-repository repo-icon" src="/Images/orderedList0.png" alt="Proposal Parts">
-                        </div>
-
-                        <span class="clause-meta meta-doctype" >Technical Proposal</span><span class="clause-meta meta-clauseid" >9074-9074</span>
-                    </div>
-                </header>
-                <div class="clearfix">
-                   
-                    <fieldset class="taxonomy-field horizontal ">
-                        <label class="name col-md-3">Content Classification</label>
-                        <span class="col-md-9">Corporate Organization, Corporate Organization Corporate Organization, Corporate Organization
-                            Corporate Organization, Corporate Organization
-                            Corporate Organization, Corporate Organization
-                            Corporate Organization, Corporate Organization</span>
-                    </fieldset>
-                </div>
-            </article>
-        </div>      
+                <label>
+                    Document Type
+                    <select class="input-xlarge">
+                        <option value="0">All</option>
+                        <option value="5557">Technical Proposal</option>
+                        <option value="5559">Financial Proposal</option>
+                        <option value="6018">Resume</option>
+                    </select>
+                </label>
+                <label class="checkbox"><input type="checkbox" value="true"> Show Only Drafts</label>
+                <label class="checkbox"><input type="checkbox" value="true"> View Segments with Missing Taxonomies</label>
+            </div>
+            <a class="btn" style="float: right; margin: 8px 8px 0 0;"><i class="icon icon-search"></i> Search</a>
+            <a class="btn" style="float: right; margin: 8px 8px 0 0;"><i class="icon icon-repeat"></i></a>
+        </form>
 
     </div>
-    <div id="content-scrollable">
-        <div class="clause clause-normal well" >
-            <article id="content-item-9074" class="content-item clearfix summary clause">
-                <header class="clearfix">
-                    <div>
-                        <div class="autowidth-left">
-                            <ul class="pageStatus">
-                                <li><img class="icon" src="/Images/draft.gif" > </li>
-                                <li>Published</li>
-                                <li>(2 days ago)</li>
-                            </ul>
+    <div class="zone zone-content col-md-9">
+        <div>
+            <div class="clause clause-normal well">
+                <article class="content-item clearfix summary clause">
+                    <header class="clearfix">
+                        <div>
+                            <div class="autowidth-left">
+                                <ul class="pageStatus">
+                                    <li><img class="icon" src="/Images/online.gif" alt="Online"> </li>
+                                    <li>Published</li>
+                                    <li>(2 days ago)</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="metadata">
-                        <div class="clause-meta meta-repository" >
-                            <img class="meta-repository repo-icon" src="/Images/orderedList1.png" alt="Proposal Parts">
+                        <div class="metadata">
+                            <div class="clause-meta meta-repository">
+                                <img class="meta-repository repo-icon" src="/Images/orderedList0.png" alt="Proposal Parts">
+                            </div>
+
+                            <span class="clause-meta meta-doctype">Technical Proposal</span><span class="clause-meta meta-clauseid">9074-9074</span>
                         </div>
+                    </header>
+                    <div class="clearfix">
 
-                        <span class="clause-meta meta-doctype" >Technical Proposal</span><span class="clause-meta meta-clauseid" >9074-9074</span>
+                        <fieldset class="taxonomy-field horizontal ">
+                            <label class="name col-md-3">Content Classification</label>
+                            <span class="col-md-9">
+                                Corporate Organization, Corporate Organization Corporate Organization, Corporate Organization
+                                Corporate Organization, Corporate Organization
+                                Corporate Organization, Corporate Organization
+                                Corporate Organization, Corporate Organization
+                            </span>
+                        </fieldset>
                     </div>
-                </header>
-                <div class="clearfix">
+                </article>
+            </div>
 
-                    <fieldset class="taxonomy-field horizontal ">
-                        <label class="name col-md-3">Content Classification</label>
-                        <span class="col-md-9">
-                            Corporate Organization, Corporate Organization Corporate Organization, Corporate Organization
-                            Corporate Organization, Corporate Organization
-                            Corporate Organization, Corporate Organization
-                            Corporate Organization, Corporate Organization
-                        </span>
-                    </fieldset>
-                </div>
-            </article>
         </div>
+        <div id="content-scrollable">
+            <div class="clause clause-normal well">
+                <article id="content-item-9074" class="content-item clearfix summary clause">
+                    <header class="clearfix">
+                        <div>
+                            <div class="autowidth-left">
+                                <ul class="pageStatus">
+                                    <li><img class="icon" src="/Images/draft.gif"> </li>
+                                    <li>Published</li>
+                                    <li>(2 days ago)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="metadata">
+                            <div class="clause-meta meta-repository">
+                                <img class="meta-repository repo-icon" src="/Images/orderedList1.png" alt="Proposal Parts">
+                            </div>
 
+                            <span class="clause-meta meta-doctype">Technical Proposal</span><span class="clause-meta meta-clauseid">9074-9074</span>
+                        </div>
+                    </header>
+                    <div class="clearfix">
+
+                        <fieldset class="taxonomy-field horizontal ">
+                            <label class="name col-md-3">Content Classification</label>
+                            <span class="col-md-9">
+                                Corporate Organization, Corporate Organization Corporate Organization, Corporate Organization
+                                Corporate Organization, Corporate Organization
+                                Corporate Organization, Corporate Organization
+                                Corporate Organization, Corporate Organization
+                            </span>
+                        </fieldset>
+                    </div>
+                </article>
+            </div>
+
+        </div>
     </div>
 </div>
