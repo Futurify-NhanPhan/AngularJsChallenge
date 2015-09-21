@@ -5,9 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@ViewBag.Title </title>
         @Styles.Render("~/Styles/main")
-
+        <link href="https://interis-qa.smartproposition.com/Themes/SmartProposition/styles/bootstrap_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Themes/SmartProposition/styles/site_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Modules/Orchard.jQuery/styles/jquery-ui-1.9.2.custom_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Themes/SmartProposition/styles/board-layout_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Modules/Edilex.Clauses/styles/css/clause-base-style_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Modules/Koneka.Utilities/styles/Chosen/chosen.min_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Modules/Koneka.Utilities/styles/Select2/select2_ko201509201.css" rel="stylesheet" type="text/css">
+        <link href="https://interis-qa.smartproposition.com/Modules/Koneka.Docs.ResumeManagement/styles/consultant-project_ko201509201.css" rel="stylesheet" type="text/css">
+        <meta content="Orchard" name="generator">
+        <meta content="IE=edge,chrome=1" name="X-UA-Compatible">
+        <link href="https://interis-qa.smartproposition.com/Themes/SmartProposition/Content/Images/favicon.ico?v=2" rel="shortcut icon" type="image/x-icon">
+        
         @RenderSection("styles", required: false)
     </head>
+
+
     <body>
        
           @RenderBody()
