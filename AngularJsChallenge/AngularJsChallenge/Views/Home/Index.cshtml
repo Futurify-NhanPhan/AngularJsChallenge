@@ -8,12 +8,11 @@
 }
 <div ng-controller="manageCtrl">
     <div class="tab-pane active col-md-3">
-        <form action="/Clauses/SearchClausesByPage" class="clearfix" method="get">
             <label>Search Segments </label>
             <input class="input-xlarge" style="margin-bottom: 10px; height: 28px;" type="text" value="">
             <br>
             <div class="form-inline">
-                <label class="checkbox"><input type="checkbox" value="true"> <b>Advanced Search</b></label>
+                <label class="checkbox"><input type="checkbox"> <b>Advanced Search</b></label>
             </div>
             <div class="tab-pane control-group" style="display: block;">
                 <label>Content Classification</label>
@@ -38,44 +37,10 @@
             </div>
             <a class="btn" style="float: right; margin: 8px 8px 0 0;"> Search</a>
             <a class="btn" style="float: right; margin: 8px 8px 0 0;"> Reset</a>
-        </form>
-
     </div>
-    <div class="zone zone-content col-md-9">
+    <div class="col-md-9">
 
-        <div class="clause clause-normal well" ng-repeat="x in segments">
-            <article class="content-item clearfix summary clause">
-                <header class="clearfix">
-                    <div>
-                        <div class="autowidth-left">
-                            <ul class="pageStatus">
-                                <li><img class="icon" src="{{x.State==0?'/Images/online.gif':'/Images/draft.gif'}}"> </li>
-                                <li>{{x.State==0?'Pulished':'Draft'}}</li>
-                                <li>{{x.CreatedOn |date: 'dd/MM/yyyy'}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="metadata">
-                        <div class="clause-meta meta-repository">
-                            <img class="meta-repository repo-icon" src="{{x.ThumbnailUrl}}">
-                        </div>
-
-                        <span class="clause-meta meta-doctype">{{x.DocumentType ==0?'Technical':'Financial'}}</span><span class="clause-meta meta-clauseid">{{x.Id}}</span>
-                    </div>
-                </header>
-                <div class="clearfix">
-
-                    <fieldset class="taxonomy-field horizontal ">
-                        <label class="name col-md-3">Content Classification</label>
-                        <span class="col-md-9">
-                            {{x.ContentClassification}}
-                           
-                        </span>
-                    </fieldset>
-                </div>
-            </article>
-        </div>
-
+      Your content here!
 
 
     </div>
