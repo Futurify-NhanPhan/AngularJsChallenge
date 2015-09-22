@@ -2,8 +2,8 @@
     ViewBag.Title = "Home Page";
 }
 @section Scripts {
-    
-<script src="~/Scripts/index.js"></script>
+
+    <script src="~/Scripts/index.js"></script>
 
 }
 <div ng-controller="manageCtrl">
@@ -42,80 +42,42 @@
 
     </div>
     <div class="zone zone-content col-md-9">
-        <div>
-            <div class="clause clause-normal well">
-                <article class="content-item clearfix summary clause">
-                    <header class="clearfix">
-                        <div>
-                            <div class="autowidth-left">
-                                <ul class="pageStatus">
-                                    <li><img class="icon" src="/Images/online.gif" alt="Online"> </li>
-                                    <li>Published</li>
-                                    <li>(2 days ago)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="metadata">
-                            <div class="clause-meta meta-repository">
-                                <img class="meta-repository repo-icon" src="/Images/orderedList0.png" alt="Proposal Parts">
-                            </div>
 
-                            <span class="clause-meta meta-doctype">Technical Proposal</span><span class="clause-meta meta-clauseid">9074-9074</span>
+        <div class="clause clause-normal well" ng-repeat="x in segments">
+            <article class="content-item clearfix summary clause">
+                <header class="clearfix">
+                    <div>
+                        <div class="autowidth-left">
+                            <ul class="pageStatus">
+                                <li><img class="icon" src="{{x.State==0?'/Images/online.gif':'/Images/draft.gif'}}"> </li>
+                                <li>{{x.State==0?'Pulished':'Draft'}}</li>
+                                <li>{{x.CreatedOn |date: 'dd/MM/yyyy'}}</li>
+                            </ul>
                         </div>
-                    </header>
-                    <div class="clearfix">
-
-                        <fieldset class="taxonomy-field horizontal ">
-                            <label class="name col-md-3">Content Classification</label>
-                            <span class="col-md-9">
-                                Corporate Organization, Corporate Organization Corporate Organization, Corporate Organization
-                                Corporate Organization, Corporate Organization
-                                Corporate Organization, Corporate Organization
-                                Corporate Organization, Corporate Organization
-                            </span>
-                        </fieldset>
                     </div>
-                </article>
-            </div>
-
-        </div>
-        <div >
-            <div class="clause clause-normal well">
-                <article id="content-item-9074" class="content-item clearfix summary clause">
-                    <header class="clearfix">
-                        <div>
-                            <div class="autowidth-left">
-                                <ul class="pageStatus">
-                                    <li><img class="icon" src="/Images/draft.gif"> </li>
-                                    <li>Published</li>
-                                    <li>(2 days ago)</li>
-                                </ul>
-                            </div>
+                    <div class="metadata">
+                        <div class="clause-meta meta-repository">
+                            <img class="meta-repository repo-icon" src="{{x.ThumbnailUrl}}">
                         </div>
-                        <div class="metadata">
-                            <div class="clause-meta meta-repository">
-                                <img class="meta-repository repo-icon" src="/Images/orderedList1.png" alt="Proposal Parts">
-                            </div>
 
-                            <span class="clause-meta meta-doctype">Technical Proposal</span><span class="clause-meta meta-clauseid">9074-9074</span>
-                        </div>
-                    </header>
-                    <div class="clearfix">
-
-                        <fieldset class="taxonomy-field horizontal ">
-                            <label class="name col-md-3">Content Classification</label>
-                            <span class="col-md-9">
-                                Corporate Organization, Corporate Organization Corporate Organization, Corporate Organization
-                                Corporate Organization, Corporate Organization
-                                Corporate Organization, Corporate Organization
-                                Corporate Organization, Corporate Organization
-                            </span>
-                        </fieldset>
+                        <span class="clause-meta meta-doctype">{{x.DocumentType ==0?'Technical':'Financial'}}</span><span class="clause-meta meta-clauseid">{{x.Id}}</span>
                     </div>
-                </article>
-            </div>
+                </header>
+                <div class="clearfix">
 
+                    <fieldset class="taxonomy-field horizontal ">
+                        <label class="name col-md-3">Content Classification</label>
+                        <span class="col-md-9">
+                            {{x.ContentClassification}}
+                           
+                        </span>
+                    </fieldset>
+                </div>
+            </article>
         </div>
+
+
+
     </div>
-   
+
 </div>
