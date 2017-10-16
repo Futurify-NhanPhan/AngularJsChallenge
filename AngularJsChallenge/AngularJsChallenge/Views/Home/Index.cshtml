@@ -9,7 +9,7 @@
 <div ng-controller="manageCtrl">
     <div class="tab-pane active col-md-3">
             <label>Search Segments </label>
-            <input class="input-xlarge" style="margin-bottom: 10px; height: 28px;" type="text" value="">
+            <input class="input-xlarge" ng-model="text" style="margin-bottom: 10px; height: 28px;" type="text" value="">
             <br>
             <div class="form-inline">
                 <label class="checkbox"><input type="checkbox"> <b>Advanced Search</b></label>
@@ -35,15 +35,23 @@
                 <label class="checkbox"><input type="checkbox" value="true"> Show Only Drafts</label>
                 <label class="checkbox"><input type="checkbox" value="true"> View Segments with Missing Taxonomies</label>
             </div>
-            <a class="btn" style="float: right; margin: 8px 8px 0 0;"> Search</a>
+            <a class="btn" style="float: right; margin: 8px 8px 0 0;" ng-click="search()"> Search</a>
             <a class="btn" style="float: right; margin: 8px 8px 0 0;"> Reset</a>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9" >
 
-      Your content here!
+      Your content here! {{myNumber}}
+        <div my-user></div>
+        <a ng-click="increase()">nhan</a>
+        <ul>
+            <li ng-repeat="s in segments"> Id: {{s.Id}} Title: {{s.Title}}</li>
+        </ul>
+
+
         
 
 
     </div>
 
 </div>
+

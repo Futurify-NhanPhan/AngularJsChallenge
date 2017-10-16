@@ -23,7 +23,7 @@ namespace AngularJsChallenge.Controllers
             return View();
         }
 
-        public ActionResult Search()
+        public ActionResult Search(SearchBindingModel model)
         {
            
             List<Segment> segments = new List<Segment>();
@@ -105,6 +105,7 @@ namespace AngularJsChallenge.Controllers
                 LastModifiedOn = DateTime.Today.AddDays(-13),
 
             });
+            segments = segments.Where(s => s.Title.Contains(model.Text)).ToList();
             return Json(new { Segments = segments },JsonRequestBehavior.AllowGet);
         }
 
